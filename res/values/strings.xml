@@ -5,4 +5,24 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <!-- 下拉刷新相关 -->
+    <string name="pull_to_refresh_pull_label">Pull to refresh&#8230;</string>
+    <string name="pull_to_refresh_release_label">Release to refresh&#8230;</string>
+    <string name="pull_to_refresh_refreshing_label">Loading&#8230;</string>
+    <string name="pull_to_refresh_tap_label">Tap to refresh&#8230;</string>
+    <!-- 上拉加载更多 -->
+    <string name="loading_no_data">No data&#8230;</string>
+    <string name="loading_full">已加载全部</string>
+    <!-- 价格相关 -->
+    <string name="avg_money_format">%1$s/day</string>
+    <!-- 商品列表 -->
+    <string name="commodity_list">商品列表</string>
+    <!-- 添加商品 -->
+    <string name="add_commodity">添加商品</string>
+    <string name="add_commodity_name">名称</string>
+    <string name="add_commodity_price">价格</string>
+    <string name="add_commodity_date">购买日期</string>
+    <string name="add_commodity_type">类别</string>
+    <string name="add_commodity_note">备注</string>
+
 </resources>

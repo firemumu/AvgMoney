@@ -5,6 +5,7 @@ import java.util.List;
 import android.content.Context;
 
 import com.avgmoney.app.model.Commodity;
+import com.avgmoney.app.model.CommodityType;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.db.sqlite.WhereBuilder;
 import com.lidroid.xutils.exception.DbException;
@@ -73,6 +74,29 @@ public class AvgMoneyDb {
         } catch (DbException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 保存商品类型
+     * */
+    public void saveCommodityType(CommodityType commodityType) {
+        try {
+            db.save(commodityType);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 查询所有商品类型
+     * */
+    public List<CommodityType> getCommodityTypes() {
+        try {
+            return db.findAll(CommodityType.class);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

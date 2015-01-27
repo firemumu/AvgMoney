@@ -27,6 +27,12 @@
             android:name="com.avgmoney.app.activity.MainActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity android:name="com.avgmoney.app.activity.AddCommodityActivity" >
+        </activity>
+        <activity
+            android:name=".activity.widget.ListDialog"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
     </application>
 
 </manifest>

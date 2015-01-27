@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:paddingLeft="@dimen/listview_item_margin"
+        android:paddingRight="@dimen/listview_item_margin" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@android:drawable/ic_dialog_dialer" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ok"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="OK"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/commodity_img"
+        android:layout_width="@dimen/commodity_image_h_or_w"
+        android:layout_height="@dimen/commodity_image_h_or_w"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_launcher"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_commodity_name" />
+
+        <EditText
+            android:id="@+id/add_commodity_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="none" >
+        </EditText>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_commodity_price" />
+
+        <EditText
+            android:id="@+id/add_commodity_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="right"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_commodity_date" />
+
+        <TextView
+            android:id="@+id/add_commodity_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:gravity="right"
+            android:text="2014-12-29" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_commodity_type" />
+
+        <TextView
+            android:id="@+id/add_commodity_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:gravity="right"
+            android:text="abcdefg" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_commodity_note" />
+
+    <EditText
+        android:id="@+id/add_commodity_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
+
+</LinearLayout>
