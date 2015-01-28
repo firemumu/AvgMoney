@@ -34,17 +34,26 @@ public class MainActivity extends Activity implements OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_main);
-
         listview = (PullToRefreshListView) findViewById(R.id.avgmoney_listview);
-        List<Commodity> commoditys = commodityLogic.queryCommodity();
-        if (commoditys != null) {
-            listview.setAdapter(new AvgMoneyListViewAdapter(this, commoditys));
-        }
         menu = (ImageView) findViewById(R.id.menu);
         title = (TextView) findViewById(R.id.title);
         title.setText(R.string.commodity_list);
         add = (TextView) findViewById(R.id.add);
         add.setOnClickListener(this);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getData();
+    }
+
+    private void getData() {
+        List<Commodity> commoditys = commodityLogic.queryCommodity();
+        if (commoditys != null) {
+            listview.setAdapter(new AvgMoneyListViewAdapter(this, commoditys));
+        }
     }
 
     @Override

@@ -36,7 +36,7 @@ public class AvgMoneyDb {
      * */
     public void saveCommodity(Commodity commodity) {
         try {
-            db.save(commodity);
+            db.saveBindingId(commodity);
         } catch (DbException e) {
             e.printStackTrace();
         }

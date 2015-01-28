@@ -7,10 +7,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import com.avgmoney.app.R;
-import com.avgmoney.app.model.Commodity;
-import com.avgmoney.app.utils.Utils;
-
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import android.view.LayoutInflater;
@@ -19,6 +15,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.avgmoney.app.R;
+import com.avgmoney.app.model.Commodity;
+import com.avgmoney.app.utils.Utils;
 
 public class AvgMoneyListViewAdapter extends BaseAdapter {
 

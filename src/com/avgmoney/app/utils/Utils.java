@@ -45,4 +45,14 @@ public class Utils {
 
         return Integer.parseInt(String.valueOf(between_days));
     }
+
+    /**
+     * 判断字串是否为空
+     * */
+    public static boolean isEmpty(String str) {
+        if (str == null || str.length() == 0 || str.equals("")) {
+            return true;
+        }
+        return false;
+    }
 }

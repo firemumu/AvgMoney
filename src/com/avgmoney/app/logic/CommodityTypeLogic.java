@@ -24,4 +24,12 @@ public class CommodityTypeLogic {
         return db.getCommodityTypes();
     }
 
+    public CommodityType getDefaultType() {
+        List<CommodityType> types = db.getCommodityTypes();
+        if (types != null && types.size() > 0) {
+            return types.get(0);
+        }
+        return null;
+    }
+
 }

@@ -1,8 +1,8 @@
 package com.avgmoney.app;
 
-import com.avgmoney.app.db.AvgMoneyDb;
-
 import android.app.Application;
+
+import com.avgmoney.app.db.AvgMoneyDb;
 
 public class AvgMoneyApplication extends Application {
 

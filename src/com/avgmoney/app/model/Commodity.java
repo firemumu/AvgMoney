@@ -2,18 +2,17 @@ package com.avgmoney.app.model;
 
 import java.util.Date;
 
+import com.avgmoney.app.db.EntityBase;
 import com.lidroid.xutils.db.annotation.Column;
 import com.lidroid.xutils.db.annotation.Foreign;
-import com.lidroid.xutils.db.annotation.Id;
+import com.lidroid.xutils.db.annotation.Table;
 
-public class Commodity {
-
-    @Id
-    private int Id;
+@Table(name = "Commodity")
+public class Commodity extends EntityBase {
 
     // 头像路径
     @Column(column = "imageUrl")
-    private String imageUrl;
+    private String imageUrl = "";
 
     @Column(column = "name")
     private String name;
@@ -32,14 +31,6 @@ public class Commodity {
     // 备注
     @Column(column = "notes")
     private String notes;
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -91,8 +82,8 @@ public class Commodity {
 
     @Override
     public String toString() {
-        return "Commodity [Id=" + Id + ", imageUrl=" + imageUrl + ", name=" + name + ", date=" + date + ", price=" + price + ", type=" + type
-                + ", notes=" + notes + "]";
+        return "Commodity [imageUrl=" + imageUrl + ", name=" + name + ", date=" + date + ", price=" + price + ", type=" + type + ", notes=" + notes
+                + "]";
     }
 
 }

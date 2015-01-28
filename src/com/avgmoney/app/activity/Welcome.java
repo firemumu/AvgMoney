@@ -1,7 +1,6 @@
 package com.avgmoney.app.activity;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -68,7 +67,16 @@ public class Welcome extends Activity implements OnClickListener {
             }
             break;
         case R.id.del:
-
+            Commodity c = new Commodity();
+            c.setName("abcdefg");
+            c.setDate(new Date());
+            c.setPrice(512.92);
+            c.setNotes("aaa");
+            CommodityType t = commodityTypeLogic.getDefaultType();
+            android.util.Log.e("tag_tony", "<<<------" + t.toString());
+            c.setType(t);
+            android.util.Log.e("tag_tony", "<<<------" + c.toString());
+            commodityLogic.addCommodity(c);
             break;
         case R.id.query:
             commoditys = commodityLogic.queryCommodity();

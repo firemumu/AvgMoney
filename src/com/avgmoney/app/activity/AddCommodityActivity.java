@@ -1,11 +1,8 @@
 package com.avgmoney.app.activity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,14 +10,13 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.avgmoney.app.R;
 import com.avgmoney.app.activity.widget.ListDialog;
@@ -28,6 +24,7 @@ import com.avgmoney.app.logic.CommodityLogic;
 import com.avgmoney.app.logic.CommodityTypeLogic;
 import com.avgmoney.app.model.Commodity;
 import com.avgmoney.app.model.CommodityType;
+import com.avgmoney.app.utils.Utils;
 
 public class AddCommodityActivity extends Activity implements OnClickListener {
 
@@ -68,6 +65,12 @@ public class AddCommodityActivity extends Activity implements OnClickListener {
         commodityNote = (EditText) findViewById(R.id.add_commodity_note);
         commodityDate.setOnClickListener(this);
         commodityType.setOnClickListener(this);
+
+        CommodityType type = commodityTypeLogic.getDefaultType();
+        if (type != null) {
+            commodityType.setText(type.getName());
+            commodityType.setTag(type);
+        }
     }
 
     @Override
@@ -104,10 +107,9 @@ public class AddCommodityActivity extends Activity implements OnClickListener {
             public void onClick(DialogInterface dialog, int which) {
                 StringBuffer sb = new StringBuffer();
                 sb.append(String.format("%d-%02d-%02d", datePicker.getYear(), datePicker.getMonth() + 1, datePicker.getDayOfMonth()));
-                sb.append("  ");
                 commodityDate.setText(sb);
                 Calendar newExpiryCalendar = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth() + 1, datePicker.getDayOfMonth());
-                commodityDate.setTag(newExpiryCalendar);
+                commodityDate.setTag(newExpiryCalendar.getTime());
                 dialog.cancel();
             }
         });
@@ -134,6 +136,20 @@ public class AddCommodityActivity extends Activity implements OnClickListener {
 
     private void saveCommodity() {
         Commodity c = getParameters();
+        if (checkParameters(c)) {
+            commodityLogic.addCommodity(c);
+            Toast.makeText(this, "保存成功...", Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
+
+    private boolean checkParameters(Commodity c) {
+        if (Utils.isEmpty(c.getName())) {
+            Toast.makeText(this, "请输入商品名称...", Toast.LENGTH_LONG).show();
+        } else {
+            return true;
+        }
+        return false;
     }
 
     private Commodity getParameters() {

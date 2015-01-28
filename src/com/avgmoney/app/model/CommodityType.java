@@ -1,22 +1,14 @@
 package com.avgmoney.app.model;
 
+import com.avgmoney.app.db.EntityBase;
 import com.lidroid.xutils.db.annotation.Column;
-import com.lidroid.xutils.db.annotation.Id;
+import com.lidroid.xutils.db.annotation.Table;
 
-public class CommodityType {
-    @Id
-    private int Id;
+@Table(name = "CommodityType")
+public class CommodityType extends EntityBase {
 
     @Column(column = "name")
     private String name;
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getName() {
         return name;
@@ -28,7 +20,7 @@ public class CommodityType {
 
     @Override
     public String toString() {
-        return "CommodityType [Id=" + Id + ", name=" + name + "]";
+        return "CommodityType [name=" + name + "]";
     }
 
 }
